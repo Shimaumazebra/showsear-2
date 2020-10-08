@@ -1,50 +1,13 @@
-## users テーブル
+## アプリケーション名	  :Showsear
+## アプリケーション概要 :革靴のSNS
+### URL	　　　　　　　：未デプロイ
+### 利用方法	　　　  ：ユーザー同士での革靴の写真投稿、コミュニケーションの促進
+### 目指した課題解決　　：①革靴が趣味の人のコミュニティ、ニッチな市場なのでWebサイトが少ない現状がある。
+### - 洗い出した要件定義
+    - 写真投稿機能
+    - ユーザー登録機能
+    - 削除・編集機能
+    - 一覧表示機能
+    - コメント機能
 
-| Column          | Type    | Options     |
-| --------------- | ------  | ----------- |
-| name            | string  | null: false |
-| email           | string  | null: false |
-| password        | string  | null: false |
-| last_name       | string  | null: false |
-| first_name      | string  | null: false |
-| last_name_kana  | string  | null: false |
-| first_name_kana | string  | null: false |
-| date_of_birth   | date    | null: false |
-
-
-### Association
-
-- has_many :items
-- has_many :comments
-
-## items テーブル
-
-| Column                | Type       | Options                            |
-| --------------------- | ---------- | ---------------------------------- |
-| user                  | references | null: false, foreign_key: true     |
-| name                  | string     | null: false                        |
-| description           | text       | null: false                        |
-| gender_id             | integer    | null: false                        |
-| category_id           | integer    | null: false                        |
-| brand_id              | integer    | null: false                        |
-| prefecture_id         | integer    | null: false                        |
-| aging_id              | integer    | null: false                        |
-| price 　　　           | integer    | null: false                        |
-
-### Association
-
-- belongs_to : users
-- has_one    : comments
-
-## comments テーブル
-
-| Column  | Type       | Options                        |
-| ------- | ---------- | ------------------------------ |
-| user    | references | null: false, foreign_key: true |
-| item    | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to : users
-- belongs_to : items
-
+### データベース設計	https://app.diagrams.net/#G10gvKjOSroqLhhlgTlhxUkVMCf6qYj-Tl
